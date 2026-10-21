@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "n64-docs"
+version = "1.0.0"
+description = "Shared Sphinx docs setup for N64 projects"
+requires-python = ">=3.10"
+dependencies = [
+  "Sphinx==9.1.0",
+  "furo==2025.12.19",
+  "myst-parser==5.0.0",
+  "breathe==4.36.0",
+]
+
+[project.scripts]
+n64-docs = "n64_docs.cli:main"
+
+[tool.setuptools]
+packages = ["n64_docs"]
+
+[tool.setuptools.package-data]
+n64_docs = ["static/*"]
